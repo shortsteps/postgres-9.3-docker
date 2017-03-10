@@ -1,14 +1,12 @@
-# postgres-9.3-docker
-
-#BUILD IMAGE
+###Build an image
 docker build -t postgres:9.3 .
 
-#RUN CONTAINER
+###Run a container
 docker run -p 5432:5432 -d --name db_postgres --restart=always postgres:9.3
 
-#CONNECT TO POSTGRES
+###Connect to Postgres
 psql -h localhost -p 5432 -U postgres -W
 psql -h localhost -p 5432 -U pguser -W pgdb
 
-#CONNECT TO BASH INTO CONTAINER
+###Connect to bash into container
 docker exec -ti -u root db_postgres bash
